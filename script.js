@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
   const timer = document.getElementById("timer")
   const hint = document.getElementById("hint")
   const bestEl = document.getElementById("best")
@@ -80,6 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
       hint.textContent = "Hold space to start"
     }
 
+    holding = false
+  })
     holding = false
   })
 })
