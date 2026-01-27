@@ -1,0 +1,85 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* animated background */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #ff1500, #0062ff, #ff00c3);
+  background-size: 400% 400%;
+  animation: gradient 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* main layout */
+.app {
+  display: flex;
+  height: 100%;
+}
+
+/* sidebar on left */
+.sidebar {
+  width: 200px;
+  background: #111;
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* top-aligned */
+  gap: 12px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.log {
+  margin-top: 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* timer area fills remaining space */
+.timer-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer {
+  font-size: 7rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 25px rgba(255,255,255,0.6);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.ready {
+  color: #00ff9c;
+  transform: scale(1.05);
+}
+
+#hint {
+  margin-top: 20px;
+  opacity: 0.6;
+  font-size: 1rem;
+}
