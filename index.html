@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubik's Cube Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- background -->
+  <div class="bg"></div>
+
+  <div class="app">
+    <!-- sidebar -->
+    <div class="sidebar">
+      <div class="stat">
+        <span>Best</span>
+        <span id="best">—</span>
+      </div>
+      <div class="stat">
+        <span>Average</span>
+        <span id="average">—</span>
+      </div>
+      <div class="log" id="log"></div>
+    </div>
+
+    <!-- timer area -->
+    <div class="timer-area">
+      <div id="timer">0:00.00</div>
+      <div id="hint" class="hint">Hold space to start</div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
