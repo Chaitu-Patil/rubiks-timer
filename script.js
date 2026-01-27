@@ -1,4 +1,4 @@
-  const timer = document.getElementById("timer")
+const timer = document.getElementById("timer")
   const hint = document.getElementById("hint")
   const bestEl = document.getElementById("best")
   const avgEl = document.getElementById("average")
@@ -81,6 +81,3 @@
 
     holding = false
   })
-    holding = false
-  })
-})
