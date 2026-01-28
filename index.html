@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="data:,">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rubik's Cube Timer</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cube Timer</title>
+
+
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- background -->
+  <!-- animated background -->
   <div class="bg"></div>
 
   <div class="app">
+
     <!-- sidebar -->
-    <div class="sidebar">
+    <aside class="sidebar">
+      <h2>Session</h2>
+
       <div class="stat">
         <span>Best</span>
         <span id="best">—</span>
       </div>
+
       <div class="stat">
         <span>Average</span>
         <span id="average">—</span>
       </div>
-      <div class="log" id="log"></div>
-    </div>
 
-    <!-- timer area -->
-    <div class="timer-area">
+      <button id="viewGraph">View Graph</button>
+
+      <div id="log" class="log"></div>
+    </aside>
+
+    <!-- timer view -->
+    <main id="timerView" class="timer-area">
       <div id="timer">0:00.00</div>
-      <div id="hint" class="hint">Hold space to start</div>
-    </div>
+      <div id="hint">Hold space to start</div>
+    </main>
+
+    <!-- graph view -->
+    <main id="graphView" class="timer-area" style="display:none">
+      <canvas id="graph"></canvas>
+      <button id="back">Back</button>
+    </main>
+
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>efer></script>
 </body>
 </html>
