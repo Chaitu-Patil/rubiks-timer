@@ -1,4 +1,3 @@
-/* reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,18 +5,21 @@
   font-family: "JetBrains Mono", monospace;
 }
 
-html, body {
-  height: 100%;
+body {
+  background: #000;
   overflow: hidden;
+  color: white;
 }
 
-/* animated background */
+/* animated gradient background */
 .bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: linear-gradient(120deg, #ff1500, #0062ff, #ff00c3);
   background-size: 400% 400%;
   animation: gradient 12s ease infinite;
+  filter: blur(80px);
+  transform: scale(1.2);
   z-index: -1;
 }
 
@@ -27,22 +29,24 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* main layout */
+/* layout */
 .app {
   display: flex;
-  height: 100%;
+  height: 100vh;
 }
 
-/* sidebar on left */
+/* sidebar */
 .sidebar {
-  width: 200px;
-  background: #111;
-  color: white;
+  width: 260px;
+  background: rgba(0,0,0,0.7);
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* top-aligned */
   gap: 12px;
+}
+
+.sidebar h2 {
+  margin-bottom: 8px;
 }
 
 .stat {
@@ -51,35 +55,61 @@ html, body {
   font-size: 18px;
 }
 
-.log {
-  margin-top: 12px;
-  overflow-y: auto;
-  flex: 1;
+button {
+  padding: 8px;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  cursor: pointer;
 }
 
-/* timer area fills remaining space */
+button:hover {
+  background: #222;
+}
+
+/* solve log */
+.log {
+  margin-top: 8px;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+/* main area */
 .timer-area {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
+/* timer */
 #timer {
-  font-size: 7rem;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 25px rgba(255,255,255,0.6);
+  font-size: 6rem;
+  letter-spacing: 0.08em;
   transition: color 0.2s, transform 0.2s;
+  text-shadow: 0 0 25px #ffffff99;
 }
 
-.ready {
+#timer.ready {
   color: #00ff9c;
   transform: scale(1.05);
 }
 
 #hint {
-  margin-top: 20px;
+  margin-top: 16px;
   opacity: 0.6;
-  font-size: 1rem;
+}
+
+/* graph */
+#graph {
+  width: 90%;
+  height: 70%;
+  background: #000;
+  border: 1px solid #333;
+}
+
+#back {
+  margin-top: 16px;
 }
